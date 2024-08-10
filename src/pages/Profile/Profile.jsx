@@ -22,7 +22,7 @@ const Profile = () => {
             />
 
             <div className="mt-2 text-center">
-              <h2 className="text-sm lg:text-xl font-semibold">Ibrahim Elsamra</h2>
+              <h2 className="text-sm lg:text-xl font-semibold">Darius Palmer</h2>
               <p className="text-sm text-gray-500">Superhost</p>
             </div>
           </div>
