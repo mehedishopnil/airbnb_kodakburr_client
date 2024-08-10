@@ -95,7 +95,7 @@ const Profile = () => {
         </div>
         <div className="lg:mx-5 pt-5 px-2 lg:-m-3 lg:w-10/12">
           <p>
-            I'm Ibrahim Elsamra, I've lived in 6 different countries, and I still
+            I'm Darius Palmer, I've lived in 6 different countries, and I still
             spend way too much time traveling. Here at home, we have two dogs
             named Hiro and Pasqual. We cannot wait to meet you.
           </p>
