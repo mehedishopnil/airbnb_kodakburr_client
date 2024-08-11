@@ -40,6 +40,10 @@ export const router = createBrowserRouter([
             {
                 path: 'profile',
                 element: <Profile/>
+            },
+            {
+               path: 'individual-earnings/:id',
+              element: <IndividualEarnings/>
             }
         ]
     },

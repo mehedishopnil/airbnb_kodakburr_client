@@ -54,7 +54,7 @@ const Header = () => {
                     <ul className="menu p-4 text-gray-700 font-bold text-xl">
                       <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
                       <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Bookings</Link></li>
-                      <li><Link to="/hosting-dashboard" onClick={() => setMobileMenuOpen(false)}>My Hosting</Link></li>
+                      <li><Link to="/hosting-dashboard/listings" onClick={() => setMobileMenuOpen(false)}>My Hosting</Link></li>
                       <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
                     </ul>
                     <div className="w-4/3 ml-8 border border-gray-400"></div>
@@ -83,7 +83,7 @@ const Header = () => {
         <div className="hidden md:flex gap-10 font-semibold text-lg text-gray-700">
           <Link to="/">Home</Link>
           <Link to="/">Bookings</Link>
-          <Link to="hosting-dashboard">My Hosting</Link>
+          <Link to="hosting-dashboard/listings">My Hosting</Link>
           <Link to="/contact">Contact</Link>
         </div>
 

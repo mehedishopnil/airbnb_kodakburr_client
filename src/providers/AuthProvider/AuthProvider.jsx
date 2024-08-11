@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
     const fetchHotelListData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://airbnb-server-theta.vercel.app/hotelListData');
+        const response = await fetch('https://airbnb-darius-palmer-server.vercel.app/hotel-list');
         if (!response.ok) {
           throw new Error(`Error fetching hotelListData.json: ${response.status} ${response.statusText}`);
         }
@@ -87,7 +87,7 @@ const AuthProvider = ({ children }) => {
     const fetchEarningList = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://airbnb-server-theta.vercel.app/earningList');
+        const response = await fetch('https://airbnb-darius-palmer-server.vercel.app/earningList');
         if (!response.ok) {
           throw new Error(`Error fetching earningList.json: ${response.status} ${response.statusText}`);
         }
