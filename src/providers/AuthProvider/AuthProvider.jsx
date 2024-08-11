@@ -15,6 +15,8 @@ const AuthProvider = ({ children }) => {
   const [hotelData, setHotelData] = useState([]);
   const [hotelListData, setHotelListData] = useState([]);
   const [earningList, setEarningList] = useState([]);
+  const [usersData, setUsersData] = useState([]);
+
 
   // Fetch hotel data
   useEffect(() => {
@@ -29,6 +31,28 @@ const AuthProvider = ({ children }) => {
         setHotelData(data);
       } catch (error) {
         console.error('Error fetching hotelData.json:', error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHotelData();
+  }, []);
+
+
+  // Fetch users data
+  useEffect(() => {
+    const fetchHotelData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('https://airbnb-darius-palmer-server.vercel.app/users');
+        if (!response.ok) {
+          throw new Error(`Error fetching hotelData.json: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        setUsersData(data);
+      } catch (error) {
+        console.error('Error fetching UsersData.json:', error.message);
       } finally {
         setLoading(false);
       }
@@ -129,8 +153,10 @@ const AuthProvider = ({ children }) => {
     hotelListData,
     loading,
     earningList,
+    usersData,
     login,
-    registration
+    registration,
+    
   };
 
   return (
