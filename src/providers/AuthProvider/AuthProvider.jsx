@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
     const fetchHotelData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://airbnb-server-theta.vercel.app/hotelData');
+        const response = await fetch('https://airbnb-darius-palmer-server.vercel.app/hotel-data');
         if (!response.ok) {
           throw new Error(`Error fetching hotelData.json: ${response.status} ${response.statusText}`);
         }
