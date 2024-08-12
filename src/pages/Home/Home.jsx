@@ -70,8 +70,8 @@ const Home = () => {
               }`}
               onClick={() => setSelectedCategory(category)}
             >
-              {categoryIcons[category]}
-              <span className="hidden md:inline">{category}</span>
+              {categoryIcons[category]} 
+               <span className="hidden md:inline pl-1">{category}</span>
             </button>
           ))}
         </div>
