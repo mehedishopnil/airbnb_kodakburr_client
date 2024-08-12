@@ -44,10 +44,10 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       {/* Search bar with search icon */}
       <div className="flex justify-center items-center mt-5 mb-4">
-        <div className="bg-white rounded-full border p-3 shadow w-4/5 mx-auto flex items-center">
+        <div className="bg-white rounded-full border p-3 shadow w-full max-w-4xl mx-auto flex items-center">
           <BsSearch size={20} className="text-gray-500 mr-2" />
           <input
             type="text"
@@ -60,25 +60,25 @@ const Home = () => {
       </div>
 
       {/* Filter Section */}
-      <div className="flex flex-col justify-center items-center mb-4 pt-10 mx-4 md:px-10">
-        <div className="flex items-center justify-center space-y-2 md:space-x-2 md:space-y-0">
+      <div className="flex flex-col justify-center items-center mb-4 pt-10">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4">
           {selectedCategories.map((category, index) => (
             <button
               key={index}
-              className={`flex justify-center items-center mr-5 mt-2 md:m-0 p-4 md:p-5 border rounded ${
-                selectedCategory === category ? 'bg-blue-500 text-white' : ''
+              className={`flex items-center justify-center p-3 md:p-4 border rounded transition-colors duration-300 ${
+                selectedCategory === category ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'
               }`}
               onClick={() => setSelectedCategory(category)}
             >
               {categoryIcons[category]} 
-               <span className="hidden md:inline pl-1">{category}</span>
+              <span className="ml-2 hidden md:inline">{category}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         {filteredData.map((item, index) => (
           <Cards key={index} data={item} />
         ))}
