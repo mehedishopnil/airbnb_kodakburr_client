@@ -7,7 +7,20 @@ import { PiBookOpenText } from "react-icons/pi";
 import { MdAddHome } from "react-icons/md";
 import { FaHome, FaUser } from "react-icons/fa";
 import { HiOutlineHomeModern } from "react-icons/hi2";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+
+
 const HostingDashboard = () => {
+  const { loading } = useContext(AuthContext); // Consume loading state
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p>Loading...</p> {/* Replace with a spinner or more sophisticated loading indicator */}
+      </div>
+    );
+  }
   return (
     <div>
       <div className="lg:flex">
