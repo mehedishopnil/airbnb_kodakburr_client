@@ -9,19 +9,20 @@ const Listings = () => {
   const [filteredListings, setFilteredListings] = useState([]);
 
   useEffect(() => {
-    // Filter the listings based on the search term
-    const filteredData = hotelListData.filter((item) => {
-      const itemName = item.name ? item.name.toLowerCase() : "";
-      const itemLocation = item.location ? item.location.toLowerCase() : "";
-      return (
-        itemName.includes(searchTerm.toLowerCase()) ||
-        itemLocation.includes(searchTerm.toLowerCase())
-      );
-    });
-  
-    setFilteredListings(filteredData);
-  }, [hotelListData, searchTerm]);
-  
+    if (!loading) {
+      // Filter the listings based on the search term only if loading is false
+      const filteredData = hotelListData.filter((item) => {
+        const itemName = item.name ? item.name.toLowerCase() : "";
+        const itemLocation = item.location ? item.location.toLowerCase() : "";
+        return (
+          itemName.includes(searchTerm.toLowerCase()) ||
+          itemLocation.includes(searchTerm.toLowerCase())
+        );
+      });
+    
+      setFilteredListings(filteredData);
+    }
+  }, [hotelListData, searchTerm, loading]);
 
   return (
     <div className="mt-8">
@@ -44,16 +45,20 @@ const Listings = () => {
         </h2>
       </div>
       <div className="w-4/5 md:w-2/3 mx-auto">
-        {user && (
-          <>
-            {loading ? (
-              <p>Loading...</p> // You can replace this with a loading indicator or placeholder
-            ) : (
+        {user ? (
+          loading ? (
+            <p>Loading...</p> // You can replace this with a loading indicator or placeholder
+          ) : (
+            filteredListings.length ? (
               filteredListings.map((item, index) => (
                 <ListingCard key={item.id} item={item} index={index} />
               ))
-            )}
-          </>
+            ) : (
+              <p>No listings found.</p> // Optional message for no data found
+            )
+          )
+        ) : (
+          <p>Please log in to view listings.</p>
         )}
       </div>
     </div>
