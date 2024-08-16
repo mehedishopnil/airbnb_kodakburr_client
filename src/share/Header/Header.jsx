@@ -9,11 +9,20 @@ const Header = () => {
   const { usersData, login, registration } = useContext(AuthContext);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const user = usersData[0];
+
+  if (!user) {
+    return <p>No user data available</p>;
+  }
+
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const isUserLoggedIn = usersData && usersData.length > 0;
+
+  console.log(user)
 
   return (
     <div className="container mx-auto bg-slate-300 py-5 px-5">
@@ -76,6 +85,7 @@ const Header = () => {
                 </Transition>
               </>
             )}
+            
           </Disclosure>
         </div>
 
@@ -90,10 +100,17 @@ const Header = () => {
         {/* Conditional Buttons */}
         <div className="hidden md:flex gap-5 justify-end">
           {isUserLoggedIn ? (
-            <>
+            <div className="flex gap-5 justify-center items-center">
               <Link className="btn btn-sm" to="/" onClick={() => { /* Handle logout */ }}>LogOut</Link>
-              <Link className="text-3xl" to="profile"><FaUserCircle /></Link>
-            </>
+
+              {
+              usersData?(
+                <Link to="profile" className=""><img  src={user.img} alt=""  className="w-[50px] h-[50px]  rounded-full"/></Link >
+              ) : (
+                <Link className="text-3xl" to="profile"><FaUserCircle /></Link>
+              )
+            }
+            </div>
           ) : (
             <>
               <Link className="btn btn-sm" to="/login">LogIn</Link>

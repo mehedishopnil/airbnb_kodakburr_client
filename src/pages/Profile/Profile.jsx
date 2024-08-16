@@ -12,14 +12,14 @@ import { FaStar } from 'react-icons/fa';
 const Profile = () => {
   const { usersData } = useContext(AuthContext);
 
-  // Assuming you want the first user in the array
+  
   const user = usersData[0];
 
   if (!user) {
     return <p>No user data available</p>;
   }
 
-  const { name, title, reviewsCount, rating, hostingCount, gender, education, work, uniqueHomeFeature, funFact, pets, guestInteractions, about } = user;
+  const { name, img, title, reviewsCount, rating, hostingCount, gender, education, work, uniqueHomeFeature, funFact, pets, guestInteractions, about } = user;
 
   return (
     <div className="container mx-auto lg:grid lg:grid-cols-2 my-10">
@@ -30,7 +30,7 @@ const Profile = () => {
             <div className="flex flex-col items-center lg:pl-5 ml-5">
               <img
                 className="rounded-full w-16  lg:w-20 lg:h-20 "
-                src="https://openclipart.org/download/247319/abstract-user-flat-3.svg"
+                src={img}
                 alt="Profile"
               />
 
@@ -52,9 +52,9 @@ const Profile = () => {
               <h2 className="flex gap-1 items-center text-2xl font-semibold">{rating} <span className='text-xl '><FaStar /></span></h2>
               <p>Rating</p>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <h2 className="text-2xl font-semibold">{hostingCount}</h2>
-              <p>Hosting</p>
+              <p>Years Hosting</p>
             </div>
             {/* Add more content as needed */}
           </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 import {
   BarChart,
@@ -78,7 +78,7 @@ const Earnings = () => {
                 <tr key={entry.year}>
                   <td className="border text-center border-gray-300 py-2 px-4">{entry.year}</td>
                   <td className="border text-center border-gray-300 py-2 px-4">
-                    {entry.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 })}$
+                  ${entry.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 })}
                   </td>
                 </tr>
               ))}
