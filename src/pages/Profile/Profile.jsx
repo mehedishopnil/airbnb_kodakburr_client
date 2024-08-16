@@ -29,7 +29,7 @@ const Profile = () => {
           <div className="flex justify-end  items-center col-span-3 pr-8 -m-5 lg:mr-10">
             <div className="flex flex-col items-center lg:pl-5 ml-5">
               <img
-                className="rounded-full w-16  lg:w-20 lg:h-20 "
+                className="rounded-full w-16 h-16 lg:w-20 lg:h-20 "
                 src={img}
                 alt="Profile"
               />

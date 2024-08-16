@@ -47,7 +47,13 @@ const Header = () => {
                   onClick={toggleMobileMenu}
                   className="flex gap-5 text-gray-700 hover:text-gray-900 focus:outline-none"
                 >
-                  <Link className="text-2xl" to="profile"><FaUserCircle /></Link>
+                  {
+              usersData?(
+                <Link to="profile" className=""><img  src={user.img} alt=""  className="w-[30px] h-[30px]  rounded-full"/></Link >
+              ) : (
+                <Link className="text-3xl" to="profile"><FaUserCircle /></Link>
+              )
+            }
                   <MdMenu size={24} />
                 </Disclosure.Button>
                 <Transition
