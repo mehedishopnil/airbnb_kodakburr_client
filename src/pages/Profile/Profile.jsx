@@ -64,44 +64,44 @@ const Profile = () => {
       {/* Bottom Section */}
       <div className='lg:grid  lg:items-center lg:-ml-10 lg:-mt-5 lg:pr-10 lg:border-l-2 border-gray-300'>
         <div className="mx-10  lg:col-span-4 lg:space-y-3 ">
-          <div className="flex gap-1 items-center mb-2">
-            <TbGenderFemale />
+          <div className="flex gap-2 items-center mb-2">
+            <TbGenderFemale className="text-xl"/>
             <p className="text-gray-700">{gender}</p>
           </div>
 
-          <div className="flex gap-1 items-center mb-2">
-            <SlGraduation />
+          <div className="flex gap-2  mb-2">
+            <SlGraduation className="text-xl"/>
             <p className="text-gray-700">
               Where I went to school: {education}
             </p>
           </div>
 
-          <div className="flex gap-1 items-center mb-2">
+          <div className="flex gap-2 items-center mb-2">
             <MdWorkOutline />
             <p className="text-gray-700">My work: {work}</p>
           </div>
 
-          <div className="flex  gap-1 mb-2">
-            <BsStars />
+          <div className="flex  gap-2 mb-2">
+            <BsStars className="text-xl"/>
             <p className="text-gray-700">
               What makes my home unique: {uniqueHomeFeature}
             </p>
           </div>
 
-          <div className="flex gap-1 pt-2 mb-2">
+          <div className="flex gap-2 pt-2 mb-2">
             <MdOutlineLightbulbCircle />
             <p className="text-gray-700">
               Fun fact: {funFact}
             </p>
           </div>
 
-          <div className="flex gap-1 items-center mb-2">
+          <div className="flex gap-2 items-center mb-2">
             <MdOutlinePets />
             <p className="text-gray-700">Pets: {pets}</p>
           </div>
 
-          <div className="flex gap-1 items-center mb-2">
-            <MdOutlineRoomService />
+          <div className="flex gap-2  mb-2">
+            <MdOutlineRoomService className="text-3xl"/>
             <p className="text-gray-700">
               For guests, I always: {guestInteractions}
             </p>
