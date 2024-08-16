@@ -44,11 +44,11 @@ const Profile = () => {
 
           {/* Second Section (Right) */}
           <div className="flex flex-col items-center lg:items-center lg:m-5 text-left col-span-2">
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <h2 className="text-2xl font-bold">{reviewsCount}</h2>
               <p>Reviews</p>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 text-center">
               <h2 className="flex gap-1 items-center text-2xl font-semibold">{rating} <span className='text-xl '><FaStar /></span></h2>
               <p>Rating</p>
             </div>
