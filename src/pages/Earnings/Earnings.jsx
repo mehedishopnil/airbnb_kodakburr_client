@@ -28,7 +28,7 @@ const Earnings = () => {
     // Convert the yearly sum into an array of objects
     const yearlyEarningsArray = Object.entries(yearlySum).map(([year, amount]) => ({
       year,
-      amount,
+      "Amount Earned": amount,
     }));
 
     // Set the state with the calculated yearly earnings
@@ -55,10 +55,17 @@ const Earnings = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
-                <YAxis />
+                <YAxis
+                  tickFormatter={(value) =>
+                    `$${value.toLocaleString(undefined, {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}`
+                  }
+                />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="amount" fill="#8884d8" />
+                <Bar dataKey="Amount Earned" fill="#8884d8" />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -78,7 +85,7 @@ const Earnings = () => {
                 <tr key={entry.year}>
                   <td className="border text-center border-gray-300 py-2 px-4">{entry.year}</td>
                   <td className="border text-center border-gray-300 py-2 px-4">
-                  ${entry.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 })}
+                  ${entry["Amount Earned"].toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                   </td>
                 </tr>
               ))}

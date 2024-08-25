@@ -107,7 +107,7 @@ const Header = () => {
         <div className="hidden md:flex gap-5 justify-end">
           {isUserLoggedIn ? (
             <div className="flex gap-5 justify-center items-center">
-              <Link className="btn btn-sm" to="/" onClick={() => { /* Handle logout */ }}>LogOut</Link>
+              <Link className="btn btn-sm" to="/" onClick={() => { /* Handle logout */ }}>Log Out</Link>
 
               {
               usersData?(
